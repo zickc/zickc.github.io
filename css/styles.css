@@ -335,9 +335,6 @@ header {
   box-sizing: border-box;
 }
 
-.header {
-}
-
 .row {
   display: -ms-flexbox; /* IE 10 */
   display: flex;
@@ -346,33 +343,32 @@ header {
   padding: 0 4px;
 }
 
-/* Create two equal columns that sits next to each other */
+/* Create four equal columns that sits next to each other */
 .column {
   -ms-flex: 50%; /* IE 10 */
-  flex: 50%;
+  flex: 25%;
+  max-width: 25%;
   padding: 0 4px;
 }
 
 .column img {
   margin-top: 8px;
   vertical-align: middle;
+  width: 100%;
 }
 
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 10px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
-  font-size: 18px;
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
 }
 
-.btn:hover {
-  background-color: #ddd;
-}
-
-.btn.active {
-  background-color: #666;
-  color: white;
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
 }
