@@ -7,16 +7,16 @@
     <body>
         訊息：<span id="name"></span>
         <br/>
-        <button onclick="responseSwift()">SendMsg</button>
+        <button onclick="sendToApp()">SendMsg</button>
         <script type="text/javascript">
-            function sendMessage(message) {
+            function appBridge(message) {
                 document.getElementById("name").innerHTML = message
-                return "Got it"
+                return "Got it from App"
             }
         
-        function responseSwift() {
-            window.webkit.messageHandlers.ToApp.postMessage("Send message to Swift")
-        }
+            function sendToApp() {
+                window.webkit.messageHandlers.appBridge.postMessage("Send message to App")
+            }
         </script>
     </body>
 </html>
