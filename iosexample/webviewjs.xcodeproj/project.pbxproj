@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1565F74327B0F06C005292D5 /* ExampleAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1565F74227B0F06C005292D5 /* ExampleAViewController.swift */; };
+		1565F74527B0F244005292D5 /* UIView+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1565F74427B0F244005292D5 /* UIView+SnapKit.swift */; };
+		1565F74727B0F33D005292D5 /* SimpleWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1565F74627B0F33D005292D5 /* SimpleWebView.swift */; };
 		1594A0AA27A3E916009E41E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1594A0A927A3E916009E41E2 /* AppDelegate.swift */; };
-		1594A0AC27A3E916009E41E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1594A0AB27A3E916009E41E2 /* SceneDelegate.swift */; };
 		1594A0AE27A3E916009E41E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1594A0AD27A3E916009E41E2 /* ViewController.swift */; };
-		1594A0B127A3E916009E41E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1594A0AF27A3E916009E41E2 /* Main.storyboard */; };
 		1594A0B327A3E918009E41E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1594A0B227A3E918009E41E2 /* Assets.xcassets */; };
 		1594A0B627A3E918009E41E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1594A0B427A3E918009E41E2 /* LaunchScreen.storyboard */; };
 		F4B1A61D7A48EF23C0E7324F /* Pods_webviewjs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C733E764BDBFEC569006ECA6 /* Pods_webviewjs.framework */; };
@@ -18,11 +19,12 @@
 
 /* Begin PBXFileReference section */
 		0AA345E7DBD56A8017AEDD70 /* Pods-webviewjs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webviewjs.debug.xcconfig"; path = "Target Support Files/Pods-webviewjs/Pods-webviewjs.debug.xcconfig"; sourceTree = "<group>"; };
+		1565F74227B0F06C005292D5 /* ExampleAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAViewController.swift; sourceTree = "<group>"; };
+		1565F74427B0F244005292D5 /* UIView+SnapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SnapKit.swift"; sourceTree = "<group>"; };
+		1565F74627B0F33D005292D5 /* SimpleWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWebView.swift; sourceTree = "<group>"; };
 		1594A0A627A3E916009E41E2 /* webviewjs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = webviewjs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1594A0A927A3E916009E41E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1594A0AB27A3E916009E41E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1594A0AD27A3E916009E41E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1594A0B027A3E916009E41E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1594A0B227A3E918009E41E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1594A0B527A3E918009E41E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1594A0B727A3E918009E41E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,9 +66,10 @@
 			isa = PBXGroup;
 			children = (
 				1594A0A927A3E916009E41E2 /* AppDelegate.swift */,
-				1594A0AB27A3E916009E41E2 /* SceneDelegate.swift */,
+				1565F74227B0F06C005292D5 /* ExampleAViewController.swift */,
+				1565F74627B0F33D005292D5 /* SimpleWebView.swift */,
+				1565F74427B0F244005292D5 /* UIView+SnapKit.swift */,
 				1594A0AD27A3E916009E41E2 /* ViewController.swift */,
-				1594A0AF27A3E916009E41E2 /* Main.storyboard */,
 				1594A0B227A3E918009E41E2 /* Assets.xcassets */,
 				1594A0B427A3E918009E41E2 /* LaunchScreen.storyboard */,
 				1594A0B727A3E918009E41E2 /* Info.plist */,
@@ -153,7 +156,6 @@
 			files = (
 				1594A0B627A3E918009E41E2 /* LaunchScreen.storyboard in Resources */,
 				1594A0B327A3E918009E41E2 /* Assets.xcassets in Resources */,
-				1594A0B127A3E916009E41E2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,22 +209,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1594A0AE27A3E916009E41E2 /* ViewController.swift in Sources */,
+				1565F74527B0F244005292D5 /* UIView+SnapKit.swift in Sources */,
 				1594A0AA27A3E916009E41E2 /* AppDelegate.swift in Sources */,
-				1594A0AC27A3E916009E41E2 /* SceneDelegate.swift in Sources */,
+				1565F74727B0F33D005292D5 /* SimpleWebView.swift in Sources */,
+				1565F74327B0F06C005292D5 /* ExampleAViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1594A0AF27A3E916009E41E2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1594A0B027A3E916009E41E2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1594A0B427A3E918009E41E2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -363,10 +359,9 @@
 				INFOPLIST_FILE = webviewjs/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -393,10 +388,9 @@
 				INFOPLIST_FILE = webviewjs/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
