@@ -10,7 +10,7 @@
         </style>
     </head>
     <body>
-        <h1>WebViewJavascriptBridge Demo</h1>
+        <h1>SKJavaScriptBridge Demo</h1>
         <script>
             function setupWebViewJavascriptBridge(callback) {
                 if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
@@ -45,14 +45,14 @@
                     }
                 }
 
-                bridge.registerHandler('testJavascriptHandler', function(data, responseCallback) {
-                    log('ObjC called testJavascriptHandler with', data)
+                bridge.registerHandler('appBridge', function(data, responseCallback) {
+                    log('ObjC called appBridge with', data)
                     var responseData = { 'Javascript Says':'Right back atcha!' }
                     log('JS responding with', responseData)
                     responseCallback(responseData)
                 })
-                bridge.callHandler('testObjcCallback', {'foo': 'bar'}, function(response) {
-                    log('JS got response', response)
+                bridge.callHandler('appBridge', {'foo': 'bar'}, function(response) {
+                    log('JS got response [A]', response)
                 })
                 document.body.appendChild(document.createElement('br'))
             })
@@ -71,8 +71,8 @@
                             log.appendChild(el)
                         }
                     }
-                    bridge.callHandler('testObjcCallback', {'foo': 'bar'}, function(response) {
-                        log('JS got response', response)
+                    bridge.callHandler('appBridge', {'foo': 'bar'}, function(response) {
+                        log('JS got response [B]', response)
                     })
                     document.body.appendChild(document.createElement('br'))
                 })
