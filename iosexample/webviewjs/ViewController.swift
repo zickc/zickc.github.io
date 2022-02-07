@@ -37,7 +37,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,7 +58,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         var vc: UIViewController?
         switch indexPath.row {
         case 0: vc = ExampleAViewController()
-        case 1: break
+        case 1: vc = ExampleBViewController()
         default: break
         }
 

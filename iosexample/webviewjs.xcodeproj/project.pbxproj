@@ -10,6 +10,7 @@
 		1565F74327B0F06C005292D5 /* ExampleAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1565F74227B0F06C005292D5 /* ExampleAViewController.swift */; };
 		1565F74527B0F244005292D5 /* UIView+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1565F74427B0F244005292D5 /* UIView+SnapKit.swift */; };
 		1565F74727B0F33D005292D5 /* SimpleWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1565F74627B0F33D005292D5 /* SimpleWebView.swift */; };
+		1565F74927B0F6CD005292D5 /* ExampleBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1565F74827B0F6CD005292D5 /* ExampleBViewController.swift */; };
 		1594A0AA27A3E916009E41E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1594A0A927A3E916009E41E2 /* AppDelegate.swift */; };
 		1594A0AE27A3E916009E41E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1594A0AD27A3E916009E41E2 /* ViewController.swift */; };
 		1594A0B327A3E918009E41E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1594A0B227A3E918009E41E2 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		1565F74227B0F06C005292D5 /* ExampleAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAViewController.swift; sourceTree = "<group>"; };
 		1565F74427B0F244005292D5 /* UIView+SnapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SnapKit.swift"; sourceTree = "<group>"; };
 		1565F74627B0F33D005292D5 /* SimpleWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWebView.swift; sourceTree = "<group>"; };
+		1565F74827B0F6CD005292D5 /* ExampleBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleBViewController.swift; sourceTree = "<group>"; };
 		1594A0A627A3E916009E41E2 /* webviewjs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = webviewjs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1594A0A927A3E916009E41E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1594A0AD27A3E916009E41E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			children = (
 				1594A0A927A3E916009E41E2 /* AppDelegate.swift */,
 				1565F74227B0F06C005292D5 /* ExampleAViewController.swift */,
+				1565F74827B0F6CD005292D5 /* ExampleBViewController.swift */,
 				1565F74627B0F33D005292D5 /* SimpleWebView.swift */,
 				1565F74427B0F244005292D5 /* UIView+SnapKit.swift */,
 				1594A0AD27A3E916009E41E2 /* ViewController.swift */,
@@ -212,6 +215,7 @@
 				1565F74527B0F244005292D5 /* UIView+SnapKit.swift in Sources */,
 				1594A0AA27A3E916009E41E2 /* AppDelegate.swift in Sources */,
 				1565F74727B0F33D005292D5 /* SimpleWebView.swift in Sources */,
+				1565F74927B0F6CD005292D5 /* ExampleBViewController.swift in Sources */,
 				1565F74327B0F06C005292D5 /* ExampleAViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
