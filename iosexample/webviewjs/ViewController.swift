@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import WebKit
 
 class ViewController: UIViewController {
 
@@ -16,6 +17,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         URLCache.shared.removeAllCachedResponses()
+
+        let types = Set([WKWebsiteDataTypeFetchCache,
+                     WKWebsiteDataTypeDiskCache,
+                     WKWebsiteDataTypeMemoryCache
+        ])
+        WKWebsiteDataStore.default().removeData(ofTypes: types,
+                                                modifiedSince: Date(timeIntervalSince1970: 0),
+                                                completionHandler: {}
+        )
 
         setupUI()
     }
