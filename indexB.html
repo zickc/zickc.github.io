@@ -18,7 +18,7 @@
                 var log = document.getElementById('log')
                 var el = document.createElement('div')
                 el.className = 'logLine'
-                el.innerHTML = now.toISOString() + (uniqueMsgId++) + '. ' + message + ':<br/>' + JSON.stringify(data)
+                el.innerHTML = now.toISOString() + ' [' + (uniqueMsgId++) + '] ' + message + ':<br/>' + JSON.stringify(data)
                 if (log.children.length) {
                     log.insertBefore(el, log.children[0])
                 } else {
