@@ -47,7 +47,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,6 +57,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0: text = "A"
         case 1: text = "B"
+        case 2: text = "C"
         default: break
         }
         cell.textLabel?.text = text
@@ -69,6 +70,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0: vc = ExampleAViewController()
         case 1: vc = ExampleBViewController()
+        case 2: vc = ExampleCViewController()
         default: break
         }
 
