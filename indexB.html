@@ -12,6 +12,20 @@
     <body>
         <h1>SKJavaScriptBridge Demo</h1>
         <script>
+            var uniqueMsgId = 1
+            function log(message, data) {
+                var now = new Date('05 October 2011 14:48 UTC')
+                var log = document.getElementById('log')
+                var el = document.createElement('div')
+                el.className = 'logLine'
+                el.innerHTML = now.toISOString() + (uniqueMsgId++) + '. ' + message + ':<br/>' + JSON.stringify(data)
+                if (log.children.length) {
+                    log.insertBefore(el, log.children[0])
+                } else {
+                    log.appendChild(el)
+                }
+            }
+
             function setupWebViewJavascriptBridge(callback) {
                 if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
             }
@@ -32,22 +46,9 @@
             console.log(func1);
 
             setupWebViewJavascriptBridge(function(bridge) {
-                var uniqueId = 1
-                function log(message, data) {
-                    var log = document.getElementById('log')
-                    var el = document.createElement('div')
-                    el.className = 'logLine'
-                    el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data)
-                    if (log.children.length) {
-                        log.insertBefore(el, log.children[0])
-                    } else {
-                        log.appendChild(el)
-                    }
-                }
-
                 bridge.registerHandler('appBridge', function(data, responseCallback) {
-                    log('ObjC called appBridge with', data)
-                    var responseData = { 'Javascript Says':'Right back atcha!' }
+                    log('iOS app called appBridge with', data)
+                    var responseData = { 'Javascript Says': 'Right back atcha!' }
                     log('JS responding with', responseData)
                     responseCallback(responseData)
                 })
@@ -59,18 +60,6 @@
     
             function onclickBtn() {
                 setupWebViewJavascriptBridge(function(bridge) {
-                    var uniqueId = 1
-                    function log(message, data) {
-                        var log = document.getElementById('log')
-                        var el = document.createElement('div')
-                        el.className = 'logLine'
-                        el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data)
-                        if (log.children.length) {
-                            log.insertBefore(el, log.children[0])
-                        } else {
-                            log.appendChild(el)
-                        }
-                    }
                     bridge.callHandler('appBridge', {'foo': 'bar'}, function(response) {
                         log('JS got response [B]', response)
                     })
