@@ -9,6 +9,9 @@ import UIKit
 import SnapKit
 import SKJavaScriptBridge
 
+private let toAppBridge = "appBridge"
+private let fromAppBridge = "appBridge"
+
 class ExampleBViewController: UIViewController {
 
     private let urlString = "https://zickc.github.io/indexB.html"
@@ -30,7 +33,7 @@ class ExampleBViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
-        jsBridge.removeHandler("testObjcCallback")
+        jsBridge.removeHandler(toAppBridge)
     }
 
     private func setupUI() {
@@ -75,9 +78,9 @@ class ExampleBViewController: UIViewController {
         }
 
         jsBridge = WebViewJavascriptBridge(for: webView, showJSconsole: true, enableLogging: true)
-        jsBridge.registerHandler("testObjcCallback") { data, callback in
+        jsBridge.registerHandler(toAppBridge) { data, callback in
             // FIXME
-            callback("Response from testObjcCallback")
+            callback("Response from \(toAppBridge)")
         }
 
         if let url = URL(string: urlString) {
@@ -108,7 +111,7 @@ class ExampleBViewController: UIViewController {
         let dict = ["action": "init",
                     "message": dateString
         ]
-        jsBridge.callHandler("testJavascriptHandler", data: dict) { response in
+        jsBridge.callHandler(fromAppBridge, data: dict) { response in
             // FIXME
             print("response: received")
         }
