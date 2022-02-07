@@ -9,12 +9,11 @@ import UIKit
 import SnapKit
 import SKJavaScriptBridge
 
-private let toAppBridge = "appBridge"
-private let fromAppBridge = "appBridge"
-
 class ExampleBViewController: UIViewController {
 
     private let urlString = "https://zickc.github.io/indexB.html"
+    private let kToAppBridge = "appBridge"
+    private let kFromAppBridge = "appBridge"
 
     private var webView: SimpleWebView!
     private var jsBridge: WebViewJavascriptBridge!
@@ -33,7 +32,7 @@ class ExampleBViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
-        jsBridge.removeHandler(toAppBridge)
+        jsBridge.removeHandler(kToAppBridge)
     }
 
     private func setupUI() {
@@ -78,9 +77,16 @@ class ExampleBViewController: UIViewController {
         }
 
         jsBridge = WebViewJavascriptBridge(for: webView, showJSconsole: true, enableLogging: true)
-        jsBridge.registerHandler(toAppBridge) { data, callback in
-            // FIXME
-            callback("Response from \(toAppBridge)")
+        jsBridge.registerHandler(kToAppBridge) { [weak self] data, callback in
+            if let dict = data as? [String: String] {
+                print("**** data from FrontEnd: \(dict)")
+            }
+
+            let responseDict = [
+                "handlerCalled": self?.kToAppBridge ?? "--",
+                "timestamp": self?.currentTimeString() ?? "--"
+            ]
+            callback(responseDict)
         }
 
         if let url = URL(string: urlString) {
@@ -104,16 +110,22 @@ class ExampleBViewController: UIViewController {
     }
 
     @objc private func sendMessage() {
-        let dateformat = DateFormatter()
-        dateformat.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let dateString = dateformat.string(from: Date())
-
         let dict = ["action": "init",
-                    "message": dateString
+                    "timestamp": currentTimeString()
         ]
-        jsBridge.callHandler(fromAppBridge, data: dict) { response in
-            // FIXME
-            print("response: received")
+        jsBridge.callHandler(kFromAppBridge, data: dict) { response in
+            if let dict = response as? [String: String] {
+                print("**** response: \(dict)")
+            } else {
+                print("**** response, received")
+            }
         }
+    }
+
+    private func currentTimeString() -> String {
+        let dateformat = DateFormatter()
+        dateformat.dateFormat = "yyyy-MM-dd HH:mm:ss.sss"
+        dateformat.timeZone = TimeZone(abbreviation: "UTC")
+        return dateformat.string(from: Date())
     }
 }

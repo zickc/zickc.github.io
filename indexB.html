@@ -12,13 +12,13 @@
     <body>
         <h1>SKJavaScriptBridge Demo</h1>
         <script>
-            var uniqueMsgId = 1
+            var uniqueLogId = 1
             function log(message, data) {
                 var now = new Date()
                 var log = document.getElementById('log')
                 var el = document.createElement('div')
                 el.className = 'logLine'
-                el.innerHTML = now.toISOString() + ' [' + (uniqueMsgId++) + '] ' + message + ':<br/>' + JSON.stringify(data)
+                el.innerHTML = now.toISOString() + ' [' + (uniqueLogId++) + '] ' + message + ':<br/>' + JSON.stringify(data)
                 if (log.children.length) {
                     log.insertBefore(el, log.children[0])
                 } else {
@@ -67,7 +67,7 @@
                 })
             }
         </script>
-        <button id='buttons' onclick="onclickBtn()" style="width: 200px;height: 40px">Fire testObjcCallback</button>
+        <button id='buttons' onclick="onclickBtn()" style="width: 200px;height: 40px">FrontEnd -> iOS app</button>
         <div id='log'></div>
     </body>
 </html>
