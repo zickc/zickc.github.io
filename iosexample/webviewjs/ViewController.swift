@@ -54,6 +54,11 @@ class ViewController: UIViewController {
             configuration.preferences.javaScriptEnabled = jsEnabled
         }
 
+        // https://github.com/marcuswestin/WebViewJavascriptBridge/issues/383
+        if #available(iOS 13.0, *) {
+            configuration.defaultWebpagePreferences.preferredContentMode = .mobile
+        }
+
         webView = WKWebView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), configuration: configuration)
         view.addSubview(webView)
         webView.snp.makeConstraints { make in
