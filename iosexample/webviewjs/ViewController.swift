@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        URLCache.shared.removeAllCachedResponses()
         setupUI()
     }
 
@@ -95,9 +96,22 @@ class ViewController: UIViewController {
         let dateformat = DateFormatter()
         dateformat.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let dateString = dateformat.string(from: Date())
-        webView.evaluateJavaScript("appBridge('Hello, \(dateString)')") { [weak self] result, error in
-            let status = "result: \(result ?? "-- no result --")    error: \(error?.localizedDescription ?? "-- no error --")"
-            self?.label.text = status
+
+        let dict = ["action": "init",
+                    "message": dateString
+        ]
+
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: dict, options: [])
+            if let string = String(data: jsonData, encoding: .utf8) {
+                let composed = "appBridge('" + string + "')"
+                webView.evaluateJavaScript(composed) { [weak self] result, error in
+                    let status = "result: \(result ?? "-- no result --")    error: \(error?.localizedDescription ?? "-- no error --")"
+                    self?.label.text = status
+                }
+            }
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }
